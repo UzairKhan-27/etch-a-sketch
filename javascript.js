@@ -23,7 +23,24 @@ function clickedNewGridButton(event)
             gridContainer.appendChild(divRef);
         }   
     }
+    const grid=document.querySelectorAll(".grid");
+    grid.forEach(function(item)
+    {
+        item.addEventListener("click",clickedGrid);        
+        
+    });
 }
+function clickedGrid(event)
+{
+    console.log(event);
+    event.target.addEventListener("mouseenter",hoverGrid);
+    
+}
+function hoverGrid(event)
+{
+    event.target.style.background="black";
+}
+
 
 const newGridButton=document.querySelector("#newGridButton");
 newGridButton.addEventListener("click",clickedNewGridButton);
