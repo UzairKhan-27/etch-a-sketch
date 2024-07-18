@@ -1,5 +1,5 @@
 .grid{
-    background-color: rgb(242, 234, 234);
+    background-color: rgba(208, 202, 202, 0.838);
     border: solid black 1px;
     box-sizing: border-box;
     display: flex;
