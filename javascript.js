@@ -1,17 +1,35 @@
 const gridContainer=document.querySelector("#gridContainer");
 let gridDimension=gridContainer.offsetWidth;
 console.log(gridDimension);
-const gridSize=15;
-for(let i=0;i<gridSize;i++)
+let gridSize=2;
+let divRef;
+function clickedNewGridButton(event)
 {
-    for(let j=0;j<gridSize;j++)
+    gridContainer.textContent="";
+    gridSize=prompt("Enter value of n for a n x n grid");
+    if(gridSize>100)
     {
-        const divRef=document.createElement("div");
-        divRef.classList.add("grid");
-        divRef.style.width=`${gridDimension/gridSize}px`;
-        divRef.style.height=`${gridDimension/gridSize}px`;
-        gridContainer.appendChild(divRef);
-    }   
+        alert("n should not be more than 100");
+        return;
+    }
+    for(let i=0;i<gridSize;i++)
+    {
+        for(let j=0;j<gridSize;j++)
+        {
+            divRef=document.createElement("div");
+            divRef.classList.add("grid");
+            divRef.style.width=`${gridDimension/gridSize}px`;
+            divRef.style.height=`${gridDimension/gridSize}px`;
+            gridContainer.appendChild(divRef);
+        }   
+    }
 }
+
+const newGridButton=document.querySelector("#newGridButton");
+newGridButton.addEventListener("click",clickedNewGridButton);
+
+
+
+
     
 
